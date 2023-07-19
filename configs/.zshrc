@@ -1,7 +1,15 @@
 alias ll='ls -al'
-alias hello='echo "Hello world"'
+alias hello='echo "Hello world!"'
 alias op='open ~/Desktop/lists'
 alias gl='git log --graph'
+
+sync() {
+  DIR=$(pwd)
+  cd ~/dotfiles
+  commit $1
+  git push
+  cd $DIR
+}
 
 commit() {
   # $1 - параметр коорый передаем через пробел после команды прим. commit "Commit message"
